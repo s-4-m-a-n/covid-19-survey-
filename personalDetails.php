@@ -1,4 +1,15 @@
 <!-- =_% -->
+
+<?php
+
+session_start();
+
+if (isset($_SESSION['registered'])){
+    header('Location:../covid-19 survey/message.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -265,15 +276,8 @@ console.log(errorFlag);
 
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname ="covid-19Survey";
-
-$conn = mysqli_connect($servername,$username,$password,$dbname);
-
-if (!$conn)
-    die("error to connect:".mysqli_connect_error());
-
+if (isset($_SESSION['registered'])){
+    header('Location:../covid-19 survey/message.php');
+}
 
 ?>
