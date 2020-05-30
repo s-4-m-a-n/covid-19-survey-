@@ -1,0 +1,49 @@
+
+# to create table
+
+create table personalDetails(
+    USER_ID int AUTO_INCREMENT PRIMARY KEY,
+    fullName varchar(20) not null ,
+    email varchar(20) not null ,
+    age tinyint CHECK (age > 0 ),
+    gender ENUM('male','female','other') not null,
+    address varchar(20) not null,
+    isInfected ENUM ('yes','no','recovered') not null
+    );
+
+
+
+# to create  questionSets table
+
+create table questionSets(
+    Q_ID tinyint PRIMARY KEY AUTO_INCREMENT,
+    question varchar(70) not null
+);
+
+
+# to insert question into db
+
+INSERT INTO questionsets(question)
+values("This is a dummy question");
+
+
+# choice table
+create table choices(
+    Q_ID tinyint,
+    FOREIGN key (Q_ID) REFERENCES questionsets(Q_ID) on DELETE CASCADE,
+    choice varchar(50) not null
+    );
+
+# inserting choices
+insert into choices (Q_ID , choice)
+values (1,"this is first choice");
+
+# create table for answers
+
+create table answers(
+    USER_ID tinyint,
+    FOREIGN key (USER_ID) REFERENCES personaldetails(USER_ID) on DELETE CASCADE,
+    Q_ID tinyint,
+    FOREIGN key (Q_ID) REFERENCES questionsets(Q_ID) on DELETE CASCADE,
+    answer varchar(70) not null
+    );
