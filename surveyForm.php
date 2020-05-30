@@ -79,7 +79,7 @@ if (!$conn){
             <h4 style="color:#d1ce02;margin-left: 2%; font-style: italic" >please fill out the form carefully</h4>
         </div>
         <div class="form">
-            <form method="POST" action="/project/covid-19 survey/register.php" onsubmit="return formVerification()" >
+            <form method="POST" action="/project/covid-19 survey/models/register.php" onsubmit="return formVerification()" >
 
             <?php
 
@@ -164,36 +164,6 @@ if (!$conn){
    <h3> &copy; opensource , 2020 </h3>
 </footer>
 
-<script type="text/javascript">
-
-    let errorFlag ;
-
-    function formVerification(){
-
-        errorFlag = true;
-
-        let radios = document.getElementsByTagName('input');
-
-        for (i = 0 ; i < radios.length ; i++ ){
-
-                if (radios[i].value == 2 && radios[i].checked){
-
-                        let txtarea = document.getElementById(radios[i].id+"+txt");
-
-                        if (txtarea.value.length < 1){
-                            document.getElementById(radios[i].id+"+alert").innerText = "text area cannot be blank!! if you want to give your own opinion";
-                            errorFlag = false;
-                        }
-                        else{
-                             document.getElementById(radios[i].id+"+alert").innerText = "";
-                        }
-                }
-        }
-
-
-        return errorFlag;
-    }
-
-</script>
+<script type="text/javascript" src="js/surveyForm.js"></script>
 </body>
 </html>

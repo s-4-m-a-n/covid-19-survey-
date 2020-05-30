@@ -3,19 +3,17 @@
 session_start();
 
 if (isset($_SESSION['registered'])){
-    header('Location:../covid-19 survey/message.php');
+    echo "session";
+    header('Location:../message.php');
 }
 
 
 
 if($_SERVER["REQUEST_METHOD"] != "POST"){
-        header('Location:../covid-19 survey/personalDetails.php');
+    echo "post";
+        header('Location:../message.php');
  }
 
-
-
- if($_SERVER["REQUEST_METHOD"] != "POST")
-        header('Location:../covid-19 survey/personalDetails.php');
 
 
 $servername = "localhost";
@@ -41,9 +39,6 @@ if(!mysqli_query($conn,$query)){
 
 
 // uploading survay form data
-
-
-
 
 
 foreach($_POST as $key => $value ){
@@ -81,7 +76,7 @@ foreach($_POST as $key => $value ){
             session_unset();
             $_SESSION['registered'] = true;
 
-            header('Location:../covid-19 survey/message.php');
+            header('Location: ../message.php');
         }
   }
 }
