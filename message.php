@@ -13,20 +13,21 @@
     <div class="container main">
         <div class="left-portion">
             <div class="thankuText">
-                <h1 id="thanks">THANK YOU !!!</h1>
+                <h1 id="thanks">THANK YOU <span style="color:#c21018">!!!</span></h1>
                 <h3>for your valuable time</h3>
             </div>
+
             <div class="messageOne">
                 <h1 id="quote">
-                "एकता ठुलो शक्ति <br/>
+                <span style="color:red"> " </span>एकता ठुलो शक्ति <br/>
                 हो सधै <br/>
                 तर एक्लै हुनुमा नि <br/>
-                आज जित देखियो"<br/>
+                आज जित देखियो<span style="color:red"> " </span><br/>
              </h1>
              </div>
         </div>
         <div class="right-portion">
-            <img src="images/SHSF.png" id="stayhomestaysafe">
+            <img src="images/StayHomeStaySafe3.jpg" id="stayhomestaysafe">
         </div>
     </div>
 </div>
