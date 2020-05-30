@@ -54,16 +54,19 @@
             font-size: 4vw;
             font-family: 'Lobster', cursive;
             color:#49494a;
+            text-shadow: 3px 3px 5px gray;
          }
          h1#quote{
-            color:#5a5b5c;
-
+            /*color:#5a5b5c;*/
+            color:#212147;
             padding: 5%;
             letter-spacing: 1px;
             word-spacing: 2px;
             font-size: 3.5vw;
             font-family: 'Kalam', cursive;
             font-style: italic;
+            text-shadow: 2px 2px 2px  gray;
+
         }
         h3{
             text-align: center;
@@ -101,5 +104,10 @@
          button:disabled{
             background-color: #70706f;
             box-shadow: inset 0px 0px 5px 1px black;
+
+        }
+
+        .thankuText{
+            border-bottom: 2px solid black;
 
         }

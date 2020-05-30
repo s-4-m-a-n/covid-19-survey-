@@ -1,9 +1,7 @@
- *{
-            margin: 0;
+*{
+            margin: 100;
             padding:0;
             box-sizing: border-box;
-            /*border: 1px solid black;*/
-
         }
          body,html{
             width: 100%;
@@ -40,6 +38,7 @@
          }
          .container .buttons{
             width:50%;
+            height: 20%;
          }
 
          .nav-bar ul{
@@ -116,18 +115,22 @@
         }
         .row .col-2{
             width:60%;
+
         }
         label{
             font-family: 'Work Sans', sans-serif;
         }
 
-        input[type ="text"],input[type ="number"]{
+        input[type ="text"],input[type ="number"],select{
             padding:2%;
             width:90%;
             border: none;
             border-radius: 2px;
         }
 
+        select#isInfected{
+            width:35%;
+        }
 
         input[id ="age"]{
             width:50px;
@@ -142,17 +145,18 @@
             flex-direction: row;
             justify-content: space-around;
             flex-wrap: wrap;
-            margin-bottom: 7%;
+            /*padding: 5%;*/
+
         }
          button{
             border:none;
             border-radius: 2px;
             background-color: #72070E;
             color:white;
-            width:25%;
-            padding:3% 0;
+            /*width:15%;*/
+            padding:2% 0;
             cursor: pointer;
-            min-width: 138px;
+            min-width: 115px;
             box-shadow: 1px 1px 5px 1px black;
  /*media query*/
          /*   margin: 5% 0;
