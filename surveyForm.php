@@ -1,4 +1,4 @@
-<!-- =_% -->
+
 
 <?php
 
@@ -6,9 +6,13 @@ session_start();
 
 // redirect to the starting page if the request is not post
 // personal details are passing using session variables  to the next page for registration
- if($_SERVER["REQUEST_METHOD"] != "POST")
-        // header('Location:../covid-19 survey/personalDetails.php');
+ if($_SERVER["REQUEST_METHOD"] != "POST"){
+        header('Location:../covid-19 survey/personalDetails.php');
+ }
 
+if (isset($_SESSION['registered'])){
+    header('Location:../covid-19 survey/message.php');
+}
 
 
 
@@ -21,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $_SESSION['gender'] = $_POST['gender'];
         $_SESSION['isInfected'] = $_POST['isInfected'];
 
-        echo "fname".$_SESSION["fullName"];
 
 }
+
 // connecting to the database
 
 $servername = "localhost";
@@ -33,8 +37,9 @@ $dbname ="covid-19Survey";
 
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 
-if (!$conn)
+if (!$conn){
     die("error to connect:".mysqli_connect_error());
+}
 
 
 ?>
