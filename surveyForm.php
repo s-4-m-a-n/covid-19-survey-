@@ -104,11 +104,14 @@ if (!$conn){
 
         if ($totalQuestions){
 
+          $counter  = 0;
             while($row = mysqli_fetch_array($result)){
+
+              $counter++;
 
             echo " <div class='question'>";
                echo  "<div class='question-title'>";
-                  echo   " <h2><span style='margin-left:-2%;margin-right: 5px'>Q". $row['Q_ID'].". </span>".$row["question"]."</h2>";
+                  echo   " <h2><span style='margin-left:-2%;margin-right: 5px'>Q". $counter.". </span>".$row["question"]."</h2>";
               echo     " </div>";
                  echo   "<div class='choices'>";
 
