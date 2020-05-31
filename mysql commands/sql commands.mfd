@@ -21,6 +21,11 @@ create table questionSets(
 );
 
 
+alter table questionsets
+add forInfected ENUM ('yes','no','recovered') not null ;
+
+
+
 # to insert question into db
 
 INSERT INTO questionsets(question)
