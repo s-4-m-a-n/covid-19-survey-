@@ -83,7 +83,19 @@ if (!$conn){
 
             <?php
 
-                $query = "select * from questionSets;";
+//used for displaying dynamic question sets according to the state of being infected
+              if($_SESSION['isInfected'] == "recovered"){
+                  $isInfected = "'yes','recovered'";
+              }
+              else if ($_SESSION['isInfected'] == "yes"){
+                $isInfected = "'yes'";
+              }
+              else{
+                $isInfected = "'no'";
+              }
+
+//------------------------------------
+                $query = "SELECT * from questionSets where forInfected in ('no',".$isInfected.");";
 
                 $result = mysqli_query($conn,$query);
 
@@ -113,7 +125,7 @@ if (!$conn){
 
                 }
 
-                    echo   " <div class='option'>  <input type='radio'  name='question".$row["Q_ID"]."' id='question".$row["Q_ID"]."'  value='2' onclick='checkRadio(this)' disabled><span class='choice-text'  >choice third:</span><br/>";
+                    echo   " <div class='option'>  <input type='radio'  name='question".$row["Q_ID"]."' id='question".$row["Q_ID"]."'  value='2' onclick='checkRadio(this)' disabled><span class='choice-text'  > other :</span><br/>";
                     echo    "<textarea  name='question".$row["Q_ID"]."+txt'  rows='2' draggable='false' id='question".$row["Q_ID"]."+txt' onkeydown='changeRadio(this)'></textarea> </div>";
                     echo "<br/>";
                     echo " <span class='alert-msg' id='question".$row['Q_ID']."+alert'></span>";
