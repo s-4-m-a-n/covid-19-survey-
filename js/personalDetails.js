@@ -66,7 +66,7 @@
 
                     }
                     else{
-                        print("error loading ajax")
+                        console.log("error loading ajax")
                     }
                 };
                 xmlhttp.open("GET", "models/checkEmail.php?email="+email.value ,false);
